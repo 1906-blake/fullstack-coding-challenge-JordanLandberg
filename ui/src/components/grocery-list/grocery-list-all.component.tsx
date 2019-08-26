@@ -61,7 +61,7 @@ export class GroceryListAllComponent extends Component<IGroceryListItemsProps, I
             }
         });
         this.setState({
-            message: 'Created'
+            message: 'Created New List'
         })
     }
     deleteList = async (list: GroceryList) => {
@@ -71,7 +71,7 @@ export class GroceryListAllComponent extends Component<IGroceryListItemsProps, I
             credentials: 'include'
         });
         this.setState({
-            message: 'Created'
+            message: `Deleted list ${list.name}`
         })
     }
 
@@ -154,6 +154,7 @@ export class GroceryListAllComponent extends Component<IGroceryListItemsProps, I
                         <button className="btn btn-lg btn-success" onClick={(e) => this.createList(e)}>Create New List</button>
                     </form>
                     <br />
+                    {this.state.message}
                 </div>
             </div>
         )
