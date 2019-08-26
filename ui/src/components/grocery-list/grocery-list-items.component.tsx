@@ -48,14 +48,14 @@ export class GroceryListWithItemsComponent extends Component<IGroceryListItemsPr
         })
     }
 
-    updateName(event: React.ChangeEvent<HTMLInputElement>) {
+    updateName = (event: React.ChangeEvent<HTMLInputElement>) => {
         const name = event.target.value;
         this.setState({
             name
         });
     }
 
-    updateType(event: React.ChangeEvent<HTMLInputElement>) {
+    updateType = (event: React.ChangeEvent<HTMLInputElement>) => {
         const type = event.target.value;
         this.setState({
             type
@@ -102,7 +102,7 @@ export class GroceryListWithItemsComponent extends Component<IGroceryListItemsPr
                                     <td>{item.groceryItemId}</td>
                                     <td>{item.groceryItemName}</td>
                                     <td>{item.groceryItemType}</td>
-                                    <td onClick={() => this.deleteItem(item)}>X</td>
+                                    <td className="clickable" onClick={() => this.deleteItem(item)}>X</td>
                                 </tr>
                             )
                         }
