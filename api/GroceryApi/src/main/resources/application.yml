@@ -1,0 +1,27 @@
+server:
+  port: ${PORT:8012}
+  
+spring:
+  application:
+    name: grocery-api
+
+  datasource:
+    driverClassName: org.postgresql.Driver
+    initialization-mode: NEVER
+    password: ${DB_PASSWORD:jLandberg8569!}
+    url: jdbc:postgresql://${DB_URL:demo-db-1906.c82y5wyg5in3.us-east-2.rds.amazonaws.com}:5432/${DB_NAME:grocery_api}
+    username: ${DB_USERNAME:jordanlandberg}
+    
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        default_schema: ${DB_SCHEMA:public}
+    show-sql: false
+   
+logging:
+  level:  
+    com.revature: TRACE
